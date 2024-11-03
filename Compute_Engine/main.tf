@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "google" {
-  project = "ab-gcp-project"
+  project = "----"
 }
 
 resource "google_compute_instance" "terraform-compute-engine" {
