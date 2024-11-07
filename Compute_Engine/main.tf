@@ -28,3 +28,16 @@ network_interface {
     }
   }
 }
+
+resource "google_storage_bucket" "bucket-for-state" {
+  name        = "backend-terraform"
+  location    = "US"
+  uniform_bucket_level_access = true
+}
+
+terraform {
+  backend "gcs" {
+    bucket  = "backend-terraform"
+    prefix  = "terraform/state"
+  }
+}
